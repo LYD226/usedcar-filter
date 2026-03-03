@@ -1,0 +1,215 @@
+/* ===== Base ===== */
+:root {
+  --border: #eee;
+  --muted: #666;
+  --bg: #fafafa;
+  --card: #fff;
+  --text: #111;
+  --chip: #f6f6f6;
+  --chip-border: #ddd;
+  --chip-active: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+/* ===== Page ===== */
+.page {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.3px;
+}
+
+.reset {
+  border: 1px solid var(--chip-border);
+  background: var(--card);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+/* ===== Search ===== */
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.search {
+  flex: 1;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 12px 12px;
+  outline: none;
+}
+
+.count {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ===== Layout (main + sidebar) ===== */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 18px;
+  align-items: start;
+}
+
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mainCol {
+  min-width: 0;
+}
+
+.sideCol {
+  position: sticky;
+  top: 16px;
+}
+
+/* ===== Filters ===== */
+.filters {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.filterBox {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 12px;
+}
+
+.filterTitle {
+  font-weight: 900;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid var(--chip-border);
+  background: var(--chip);
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.chip.active {
+  border-color: var(--chip-active);
+  background: var(--chip-active);
+  color: white;
+  font-weight: 800;
+}
+
+/* ===== Table ===== */
+.tableWrap {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: var(--card);
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 1600px; /* 표가 좁아 보이면 1800~2200으로 올려도 됨 */
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+  white-space: nowrap; /* 기본은 줄바꿈 금지 */
+}
+
+.table th {
+  font-weight: 900;
+  background: #fcfcfc;
+}
+
+.strong {
+  font-weight: 900;
+}
+
+/* 긴 텍스트는 줄바꿈 허용 */
+.wrap {
+  white-space: normal;
+  word-break: keep-all;
+  line-height: 1.35;
+}
+
+/* ===== Sidebar Cards ===== */
+.sideCard {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.sideTitle {
+  font-weight: 900;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.sideSection {
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.sideH {
+  font-weight: 800;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.sideList {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.5;
+  font-size: 13px;
+}
